@@ -4,7 +4,7 @@ import { Price } from '@magento/peregrine';
 import { Link } from 'react-router-dom';
 import classify from 'src/classify';
 import { transparentPlaceholder } from 'src/shared/images';
-import makeMediaUrl from 'src/util/makeMediaUrl';
+import { makeProductMediaPath } from 'src/util/makeMediaPath';
 import defaultClasses from './item.css';
 
 const imageWidth = '300';
@@ -120,10 +120,7 @@ class GalleryItem extends Component {
         return (
             <img
                 className={classes.image}
-                src={makeMediaUrl(small_image, {
-                    type: 'product',
-                    width: imageWidth
-                })}
+                src={makeProductMediaPath(small_image)}
                 alt={name}
                 width={imageWidth}
                 height={imageHeight}
